@@ -8,3 +8,29 @@ function sortArray(arr) {
   return res;
 }
 console.log(sortArray([3, 15, 6, 54, 8, 5]));
+
+
+
+//part-2
+const SortArray = (arr) =>{
+    //copy Array to other Arrya 
+    const sorted = [];
+    for(let temp of arr){
+        sorted.push(temp);
+    }
+    for(let i = 0 ; i < sorted.length ; i++){
+        for(let j = i+1  ; j < sorted.length ; j++){
+            if(sorted[i] > sorted[j]){
+                let a = sorted[i];
+                sorted[i] = sorted[j];
+                sorted[j] = a;
+            }
+        }
+    }
+    return sorted;
+} 
+
+const arr = [6, 7, 8, 5, 2, 9, 3];
+
+console.log(`Orginal Array : ${arr}`);
+console.log(`Sorted Array is : ${SortArray(arr)}`);
